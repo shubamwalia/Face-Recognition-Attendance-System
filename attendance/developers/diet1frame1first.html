@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <style>
+             #share-buttons img {
+               width: 35px;
+               padding: 5px;
+               border: 0;
+               box-shadow: 0;
+               }
+                a:hover { 
+                   color: orange;
+               }
+            div.transbox {
+    margin: 10px;
+    background-color: #ffffff;
+    opacity: 0.6;
+    filter: alpha(opacity=60); 
+    width:510px;
+    border-left: 4px solid rgb(255, 115, 0);
+}
+div.transbox p{
+    color: black;
+    font-size: 24px;
+    font-family: AR DESTINE;
+}
+div.transbox2 {
+    margin: 10px;
+    background-color: #ffffff;
+    opacity: 0.6;
+    filter: alpha(opacity=60); 
+}
+div.transbox2{
+    color: black;
+    font-family: AR DESTINE;
+}
+.new{
+    background-image: url("diet2-2.jpg");
+    background-attachment: fixed;
+}
+#video
+{
+    position:fixed;
+    right:0%;
+    bottom:0%;
+    min-height:100%;
+    min-width:100%;
+}
+#frame
+{
+    position:relative;
+}
+        </style>
+    </head>
+
+    <body background="greybackground.jpg" text="black" link="black" alink="black" vlink="black">
+        <video autoplay muted loop id="video">
+            <source src="Gold_Particles.mp4" type="video/mp4">
+        </video>
+            <iframe id="frame" src="dietslideshow.html" width="100%" height="500" frameborder="0" scrolling="no" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-bottom: 4px solid rgb(255, 115, 0);border-top: 4px solid rgb(255, 115, 0);"></iframe>
+            <br>
+            <br>
+            <div class="transbox">
+              <p> <a href="" style="text-decoration:none; color:rgb(0, 0, 0); font-size:46px;" class="typewrite" data-period="2000" data-type='[ " Face Recognition "]'></a></p>
+              </div>
+                 <br>
+                 <div class="new">
+                 <pre>
+                   <iframe src="diet1.html" width="1000" height="950" scrolling="no" frameborder="0" style="opacity:0.95; margin:20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-bottom: 4px solid rgb(255, 115, 0);"></iframe>
+                           
+                           
+
+                 </pre>
+                 </div>
+                 <br><br><br><br><br><br><br><br><br>
+              <script>
+                    var TxtType = function(el, toRotate, period) {
+                            this.toRotate = toRotate;
+                            this.el = el;
+                            this.loopNum = 0;
+                            this.period = parseInt(period, 10) || 2000;
+                            this.txt = '';
+                            this.tick();
+                            this.isDeleting = false;
+                        };
+                    
+                        TxtType.prototype.tick = function() {
+                            var i = this.loopNum % this.toRotate.length;
+                            var fullTxt = this.toRotate[i];
+                    
+                            if (this.isDeleting) {
+                            this.txt = fullTxt.substring(0, this.txt.length - 1);
+                            } else {
+                            this.txt = fullTxt.substring(0, this.txt.length + 1);
+                            }
+                    
+                            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+                    
+                            var that = this;
+                            var delta = 200 - Math.random() * 100;
+                    
+                            if (this.isDeleting) { delta /= 2; }
+                    
+                            if (!this.isDeleting && this.txt === fullTxt) {
+                            delta = this.period;
+                            this.isDeleting = true;
+                            } else if (this.isDeleting && this.txt === '') {
+                            this.isDeleting = false;
+                            this.loopNum++;
+                            delta = 500;
+                            }
+                    
+                            setTimeout(function() {
+                            that.tick();
+                            }, delta);
+                        };
+                    
+                        window.onload = function() {
+                            var elements = document.getElementsByClassName('typewrite');
+                            for (var i=0; i<elements.length; i++) {
+                                var toRotate = elements[i].getAttribute('data-type');
+                                var period = elements[i].getAttribute('data-period');
+                                if (toRotate) {
+                                  new TxtType(elements[i], JSON.parse(toRotate), period);
+                                }
+                            }
+                            // INJECT CSS
+                            var css = document.createElement("style");
+                            css.type = "text/css";
+                            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+                            document.body.appendChild(css);
+                        };
+                        </script>
+    </body>
+</html>

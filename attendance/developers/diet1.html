@@ -1,0 +1,50 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="slider.css">
+<style>
+.mySlides {display:none}
+</style>
+<body bgcolor="white">
+
+
+<div class="w3-content" style="max-width:850px;height:2000px">
+  <iframe class="mySlides" src="trial2.html" scrolling="no" frameborder="0" style="width:900px;height:850px"></iframe>
+  <iframe class="mySlides" src="diet1frame2.html" scrolling="no" frameborder="0"style="width:900px;height:850px"></iframe>
+  
+<br>
+<div class="w3-center" style="margin-bottom:5px";>
+<br>  <button class="w3-button demo" onclick="currentDiv(1)">     Developers  </button>
+  <button class="w3-button demo" onclick="currentDiv(2)">    Terms and Conditions</button> 
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-red";
+}
+</script>
+
+</body>
+</html>

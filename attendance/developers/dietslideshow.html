@@ -1,0 +1,82 @@
+<html>
+<link rel="stylesheet" href="slideer2.css">
+<style>
+  .mySlides {display:none}
+  .w3-left, .w3-right, .w3-badge {cursor:pointer}
+  .w3-badge {height:15px;width:15px;padding:0}
+  .text {
+  color:rgb(19, 3, 3);
+  background-color:rgb(234, 241, 245);
+  font-family: AR DESTINE;
+  opacity:0.3;
+  font-size: 52px;
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+</style>
+<body>
+<div class="w3-content w3-section" style="max-width:100%;max-height:100%">
+  <img class="mySlides2 w3-animate-fading" src="face1.jpg" style="width:100%;height:480px">
+  <div class="text">Face Recognition</div>
+  <img class="mySlides2 w3-animate-fading" src="face4.jpeg" style="width:100%;height:500px">
+  <div class="text">Face Recognition</div>
+  <img class="mySlides2 w3-animate-fading" src="face2.jpg" style="width:100%;height:480px">
+  <div class="text">Face Recognition</div>
+  <img class="mySlides2 w3-animate-fading" src="face3.jpg" style="width:100%;height:480px">
+  <div class="text">Face Recognition</div>
+<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+    </div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides2");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000);    
+}
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides2");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+</body>
+</html>
