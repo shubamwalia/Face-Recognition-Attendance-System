@@ -61,7 +61,7 @@ while True:
     #cv2.imshow('gray',gray);
     if flag == 10:
         playsound('transactionSound.mp3')
-        print("Transction Blocked")
+        print("Transaction Blocked")
         break;
     if time.time()>start+period:
         break;
