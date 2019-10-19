@@ -8,3 +8,4 @@ Face Recognition Attendance System with Python 3.6 and OpenCV 3.4
 
 Note:1. Please download libraries accordingly by opening python file : tkinter,firebase,numpy,pillow,xlwrite,opencv3.4
      2. Run it using python 3.6
+###Now, it's Work on python 3.7 as well.
